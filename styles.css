@@ -171,6 +171,10 @@ ul, ol { list-style: none; }
 .edu-item { background: var(--bg-2); border-radius: 14px; padding: 24px; }
 .edu-item h4 { font-size: 19px; font-weight: 600; letter-spacing: -.02em; margin: 10px 0 4px; }
 .edu-item p { color: var(--ink-2); font-size: 14px; }
+.extras { border-top: 1px solid var(--line); }
+.extras li { display: grid; grid-template-columns: 200px 1fr auto; align-items: baseline; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.extras h4 { font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
+.extras p { color: var(--ink-2); font-size: 14px; }
 
 /* contact */
 .contact { max-width: var(--max); margin: 0 auto; padding: 140px var(--pad) 90px; display: grid; gap: 28px; }
@@ -202,6 +206,7 @@ ul, ol { list-style: none; }
   .idx, .p-side { padding-top: 0; }
   .skills { grid-template-columns: 1fr 1fr; }
   .edu { grid-template-columns: 1fr; }
+  .extras li { grid-template-columns: 1fr; gap: 4px; }
 }
 @media (max-width: 520px) {
   .stats, .cards, .skills { grid-template-columns: 1fr; }
