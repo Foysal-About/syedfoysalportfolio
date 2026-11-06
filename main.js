@@ -36,6 +36,29 @@ const io = new IntersectionObserver(entries => entries.forEach(e => {
 }), { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+// stat numbers count up from 0 when they scroll into view
+const countUp = b => {
+  const [n, suffix] = b.dataset.count.split('|');
+  const start = performance.now();
+  const tick = now => {
+    const t = Math.min((now - start) / 1200, 1);
+    b.textContent = Math.round(n * (1 - (1 - t) ** 3)) + suffix;  // ease-out cubic
+    if (t < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+};
+const counter = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) { countUp(e.target); counter.unobserve(e.target); }
+}), { threshold: 0.5 });
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+  document.querySelectorAll('.stat b').forEach(b => {
+    const m = b.textContent.match(/^(\d+)(.*)$/);
+    if (!m) return;  // skip non-numeric stats like "Android · Web"
+    b.dataset.count = m[1] + '|' + m[2];
+    b.textContent = '0' + m[2];  // start at 0 so the number never flashes before counting
+    counter.observe(b);
+  });
+
 // hero ribbons follow the mouse a little
 const hero = document.querySelector('.hero');
 hero.addEventListener('pointermove', e => {

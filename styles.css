@@ -118,7 +118,7 @@ ul, ol { list-style: none; }
   max-width: var(--max); margin: 0 auto; padding: 72px var(--pad) 24px; gap: 24px;
 }
 .stat { border-top: 1px solid var(--line); padding-top: 16px; }
-.stat b { display: block; font-size: clamp(26px, 3vw, 40px); font-weight: 600; letter-spacing: -.03em; }
+.stat b { display: block; font-size: clamp(26px, 3vw, 40px); font-weight: 600; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
 .stat span { color: var(--muted); font-size: 14px; }
 
 /* sections */
