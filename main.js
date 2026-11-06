@@ -20,7 +20,7 @@ name.setAttribute('aria-label', 'Syed Foysal');
 const clip = name.firstChild;
 const fit = () => {
   name.style.fontSize = '100px';
-  name.style.fontSize = `${92 * name.clientWidth / clip.scrollWidth}px`;  // 92% of width leaves breathing room
+  name.style.fontSize = `${70 * name.clientWidth / clip.scrollWidth}px`;  // 70% of width keeps the name prominent, not overpowering
 };
 fit();
 document.fonts.ready.then(fit);
