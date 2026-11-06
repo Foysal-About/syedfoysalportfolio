@@ -160,6 +160,7 @@ ul, ol { list-style: none; }
 .org { color: var(--muted); margin-bottom: 14px; }
 .org a:hover { color: var(--accent); }
 .job li { position: relative; padding-left: 20px; color: var(--ink-2); margin-bottom: 6px; max-width: 70ch; }
+.job li b { color: var(--ink); font-weight: 600; }
 .job li::before { content: ""; position: absolute; left: 0; top: .72em; width: 8px; height: 1px; background: var(--muted); }
 
 /* skills */
