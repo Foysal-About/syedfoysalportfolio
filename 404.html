@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — Syed Foysal</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <!-- self-contained: 404 can be served at any depth, so relative styles.css would break -->
+  <style>
+    :root { --bg: #ece6dd; --ink: #161514; --ink-2: #4a4641; --muted: #8a847b; --line: rgba(22,21,20,.14); --ribbon: rgba(255,255,255,.75); }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) { --bg: #121110; --ink: #ece6dd; --ink-2: #b9b2a7; --muted: #7d776e; --line: rgba(236,230,221,.14); --ribbon: rgba(236,230,221,.07); }
+    }
+    :root[data-theme="dark"] { --bg: #121110; --ink: #ece6dd; --ink-2: #b9b2a7; --muted: #7d776e; --line: rgba(236,230,221,.14); --ribbon: rgba(236,230,221,.07); }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      min-height: 100svh; display: grid; grid-template-rows: auto 1fr auto;
+      background: var(--bg); color: var(--ink); font: 500 16px/1.55 "Inter Tight", system-ui, sans-serif;
+      padding: 18px clamp(16px, 2.2vw, 32px); overflow: hidden; position: relative;
+    }
+    body::before {
+      content: ""; position: fixed; width: 110vmax; height: 65vmax; left: -25vmax; top: -10vmax; z-index: -1;
+      border-radius: 50%; border: 90px solid var(--ribbon); filter: blur(28px); transform: rotate(-28deg);
+    }
+    a { color: inherit; text-decoration: none; }
+    .mono { font: 400 11px/1.4 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .brand { font-weight: 600; letter-spacing: -.02em; }
+    main { align-self: center; max-width: 560px; }
+    .code { font-weight: 800; letter-spacing: -.06em; line-height: .9; font-size: clamp(110px, 22vw, 260px); margin: 14px 0 22px -.04em; }
+    h1 { font-size: clamp(24px, 3vw, 34px); font-weight: 600; letter-spacing: -.03em; line-height: 1.15; }
+    p { color: var(--ink-2); margin: 10px 0 28px; }
+    .btn { display: inline-flex; gap: 8px; align-items: center; background: var(--ink); color: var(--bg); padding: 11px 18px; border-radius: 6px; font-size: 15px; transition: transform .25s, opacity .25s; }
+    .btn:hover { transform: translateY(-1px); opacity: .9; }
+    .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    footer { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 14px; }
+  </style>
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+  <a class="brand home" href="/">Syed Foysal</a>
+  <main>
+    <span class="mono">Error 404</span>
+    <div class="code" aria-hidden="true">404</div>
+    <h1>This page doesn't exist.</h1>
+    <p>The link may be broken, or the page may have moved. Everything I've built is on the homepage.</p>
+    <a class="btn home" href="/">Back to homepage <span aria-hidden="true">↗</span></a>
+  </main>
+  <footer class="mono"><span>Syed Foysal</span><span>Dhaka, Bangladesh</span></footer>
+  <script>
+    // GitHub Pages serves this repo under /syedfoysalportfolio/; Vercel and Netlify serve it at the root
+    var base = location.pathname.indexOf('/syedfoysalportfolio') === 0 ? '/syedfoysalportfolio/' : '/';
+    document.querySelectorAll('.home').forEach(function (a) { a.href = base; });
+  </script>
+</body>
+</html>
