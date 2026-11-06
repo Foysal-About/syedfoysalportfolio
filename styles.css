@@ -106,7 +106,7 @@ ul, ol { list-style: none; }
 .hero-name {
   font-weight: 800; letter-spacing: -.05em; line-height: .9;
   font-size: clamp(64px, 17.4vw, 300px);
-  white-space: nowrap; padding: .06em 0 0; margin-left: -.03em;
+  white-space: nowrap; padding: .06em 0 0; text-align: center;
 }
 .hero-name .ch { display: inline-block; transform: translateY(105%); animation: rise 1s cubic-bezier(.2, .8, .2, 1) forwards; }
 .hero-name-clip { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .02em .16em; }
